@@ -8,7 +8,8 @@ export const FOUNDER_IMAGE = `${BASE}images/about-atelier.jpg`;
 
 export const OG_IMAGE = `${BASE}images/hero-rubaab.jpg`;
 
-export const SITE_URL = import.meta.env.VITE_PUBLIC_SITE_URL ?? 'http://localhost:5173';
+export const SITE_URL =
+  (import.meta.env.VITE_PUBLIC_SITE_URL ?? '').trim() || 'http://localhost:5173';
 
 /** Absolute asset URL that respects Vite's BASE_URL. */
 export function assetUrl(path: string): string {

@@ -1,4 +1,7 @@
-const RAW_BASE = (import.meta.env.VITE_API_URL as string | undefined) ?? 'http://localhost:4000/api';
+// CI passes an empty string when the repository variable is unset; `??` alone
+// would then build a URL from "" and throw before the app mounts.
+const RAW_BASE =
+  (import.meta.env.VITE_API_URL ?? '').trim() || 'http://localhost:4000/api';
 export const API_BASE = RAW_BASE.replace(/\/+$/, '');
 export const API_ORIGIN = new URL(API_BASE).origin;
 
