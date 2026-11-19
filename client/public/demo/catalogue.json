@@ -1,0 +1,451 @@
+{
+  "generatedAt": "2026-11-19T21:34:12.763Z",
+  "settings": {
+    "about": {
+      "intro": "",
+      "story": "",
+      "founderImageUrl": "/images/about-atelier.jpg"
+    },
+    "announcements": {
+      "enabled": true,
+      "text": "Complimentary delivery across India on orders above ₹4,999 · DM to order"
+    },
+    "policies": {
+      "shipping": "",
+      "returns": ""
+    },
+    "_id": "6aff68c89b5bea05468e8779",
+    "businessName": "Haya Nur",
+    "tagline": "Clothing · Elegance · Modesty",
+    "whatsappNumber": "",
+    "instagramUrl": "https://www.instagram.com/hayanur.clothing/",
+    "instagramHandle": "hayanur.clothing",
+    "email": "",
+    "city": "Mumbai",
+    "mapsUrl": "",
+    "whatsappTemplate": "Assalamu alaikum Haya Nur! 🩶\nI would like to order the following:\n{{ITEMS}}\nEstimated total: {{TOTAL}}\n\nPlease share sizes, availability and delivery details.",
+    "whatsappSingleProductTemplate": "Assalamu alaikum Haya Nur! 🩶\nI would like to enquire about:\n• {{PRODUCT}}\n{{VARIANT_LINE}}{{QTY_LINE}}Price: {{PRICE}}\n\nPlease share availability and delivery details.",
+    "heroSlides": [
+      {
+        "imageUrl": "/images/hero-rubaab.jpg",
+        "eyebrow": "The Rubaab Edit",
+        "headline": "A royal touch of elegance",
+        "subheadline": "Deep red, heavy embroidery and a printed farshi shalwar — a blend of tradition, luxury and timeless beauty.",
+        "ctaLabel": "Shop the edit",
+        "ctaHref": "/shop",
+        "active": true
+      },
+      {
+        "imageUrl": "/images/hero-elaf.jpg",
+        "eyebrow": "Elaf",
+        "headline": "Black, but never basic",
+        "subheadline": "A timeless silhouette with effortless elegance, cut for the woman who dresses quietly and is remembered anyway.",
+        "ctaLabel": "Discover Elaf",
+        "ctaHref": "/shop",
+        "active": true
+      },
+      {
+        "imageUrl": "/images/hero-pista.jpg",
+        "eyebrow": "New in",
+        "headline": "Softly, into the season",
+        "subheadline": "Pista green, fine lawn and organza that moves with you. Made to be loved, styled and lived in.",
+        "ctaLabel": "See new arrivals",
+        "ctaHref": "/shop?sort=newest",
+        "active": true
+      }
+    ],
+    "createdAt": "2026-11-19T21:23:20.095Z",
+    "updatedAt": "2026-11-19T21:23:20.095Z",
+    "__v": 0
+  },
+  "products": [
+    {
+      "_id": "6aff68c89b5bea05468e8784",
+      "name": "Rubaab",
+      "slug": "rubaab",
+      "description": "A royal touch of elegance. A deep-red ensemble with intricate heavy embroidery, paired with a beautifully printed farshi shalwar and a graceful dupatta — tradition, luxury and timeless beauty in one piece.",
+      "price": null,
+      "compareAtPrice": null,
+      "fabric": "Embroidered chiffon shirt · printed farshi shalwar · sheer dupatta",
+      "care": "Dry clean only. Store folded with the dupatta rolled separately to protect the embroidery.",
+      "colour": "Deep red",
+      "category": {
+        "_id": "6aff68c89b5bea05468e877c",
+        "name": "Farshi Shalwar",
+        "slug": "farshi-shalwar"
+      },
+      "images": [
+        "/images/hero-rubaab.jpg",
+        "/images/p-rubaab.jpg"
+      ],
+      "variants": [
+        {
+          "name": "L",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "2XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "3XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        }
+      ],
+      "stockStatus": "in_stock",
+      "bestseller": true,
+      "featured": true,
+      "newArrival": false,
+      "seoTitle": "",
+      "seoDescription": "",
+      "displayOrder": 1,
+      "archived": false,
+      "createdAt": "2026-11-19T21:23:20.149Z",
+      "updatedAt": "2026-11-19T21:23:20.149Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e8786",
+      "name": "Elaf",
+      "slug": "elaf",
+      "description": "Black, but never basic. A timeless silhouette with effortless elegance — a longline embroidered kurta, wide trousers and a soft dupatta that falls exactly where it should.",
+      "price": null,
+      "compareAtPrice": null,
+      "fabric": "Embroidered kurta · wide-leg trouser · soft chiffon dupatta",
+      "care": "Dry clean recommended. Cool iron on the reverse, never directly on the embroidery.",
+      "colour": "Black",
+      "category": {
+        "_id": "6aff68c89b5bea05468e877e",
+        "name": "Embroidered Ensembles",
+        "slug": "embroidered-ensembles"
+      },
+      "images": [
+        "/images/hero-elaf.jpg",
+        "/images/p-net.jpg"
+      ],
+      "variants": [
+        {
+          "name": "M",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "L",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "2XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "3XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        }
+      ],
+      "stockStatus": "in_stock",
+      "bestseller": true,
+      "featured": true,
+      "newArrival": false,
+      "seoTitle": "",
+      "seoDescription": "",
+      "displayOrder": 2,
+      "archived": false,
+      "createdAt": "2026-11-19T21:23:20.156Z",
+      "updatedAt": "2026-11-19T21:23:20.156Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e8788",
+      "name": "Pista Green Lawn Suit",
+      "slug": "pista-green-lawn-suit",
+      "description": "Softly, into the season. A pale pistachio three-piece in fine lawn with delicate lace edging and an organza dupatta that moves with you.",
+      "price": null,
+      "compareAtPrice": null,
+      "fabric": "Printed lawn shirt · lawn trouser · organza dupatta",
+      "care": "Gentle hand wash separately in cold water. Line dry in shade.",
+      "colour": "Pista green",
+      "category": {
+        "_id": "6aff68c89b5bea05468e8780",
+        "name": "Lawn & Everyday",
+        "slug": "lawn-everyday"
+      },
+      "images": [
+        "/images/hero-pista.jpg",
+        "/images/p-lawn.jpg"
+      ],
+      "variants": [
+        {
+          "name": "S",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "M",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "L",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "2XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        }
+      ],
+      "stockStatus": "in_stock",
+      "bestseller": false,
+      "featured": true,
+      "newArrival": true,
+      "seoTitle": "",
+      "seoDescription": "",
+      "displayOrder": 3,
+      "archived": false,
+      "createdAt": "2026-11-19T21:23:20.160Z",
+      "updatedAt": "2026-11-19T21:23:20.160Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e878a",
+      "name": "Black Net Embroidered Set",
+      "slug": "black-net-embroidered-set",
+      "description": "Sheer net worked with fine silver thread, finished with a scalloped dupatta. Made for the evenings when you want to be looked at twice.",
+      "price": null,
+      "compareAtPrice": null,
+      "fabric": "Net with silver thread embroidery · lined inner · scalloped dupatta",
+      "care": "Dry clean only. Handle the scalloped edge with care.",
+      "colour": "Black · silver",
+      "category": {
+        "_id": "6aff68c89b5bea05468e877e",
+        "name": "Embroidered Ensembles",
+        "slug": "embroidered-ensembles"
+      },
+      "images": [
+        "/images/p-net.jpg"
+      ],
+      "variants": [
+        {
+          "name": "M",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "L",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "2XL",
+          "price": null,
+          "stockStatus": "in_stock"
+        }
+      ],
+      "stockStatus": "in_stock",
+      "bestseller": false,
+      "featured": false,
+      "newArrival": true,
+      "seoTitle": "",
+      "seoDescription": "",
+      "displayOrder": 4,
+      "archived": false,
+      "createdAt": "2026-11-19T21:23:20.164Z",
+      "updatedAt": "2026-11-19T21:23:20.164Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e878c",
+      "name": "Chiffon Dupatta — House Palette",
+      "slug": "chiffon-dupatta-house-palette",
+      "description": "A fine crinkle chiffon dupatta in the house palette — sage, ivory, taupe and charcoal. The easiest way to finish a look.",
+      "price": null,
+      "compareAtPrice": null,
+      "fabric": "Crinkle chiffon · hand-finished edges",
+      "care": "Hand wash cold, do not wring. Steam lightly.",
+      "colour": "Sage · ivory · taupe · charcoal",
+      "category": {
+        "_id": "6aff68c89b5bea05468e8782",
+        "name": "Hijabs & Dupattas",
+        "slug": "hijabs-dupattas"
+      },
+      "images": [
+        "/images/p-shawl.jpg"
+      ],
+      "variants": [
+        {
+          "name": "Sage",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "Ivory",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "Taupe",
+          "price": null,
+          "stockStatus": "in_stock"
+        },
+        {
+          "name": "Charcoal",
+          "price": null,
+          "stockStatus": "in_stock"
+        }
+      ],
+      "stockStatus": "in_stock",
+      "bestseller": false,
+      "featured": false,
+      "newArrival": true,
+      "seoTitle": "",
+      "seoDescription": "",
+      "displayOrder": 5,
+      "archived": false,
+      "createdAt": "2026-11-19T21:23:20.167Z",
+      "updatedAt": "2026-11-19T21:23:20.167Z",
+      "__v": 0
+    }
+  ],
+  "categories": [
+    {
+      "_id": "6aff68c89b5bea05468e877c",
+      "name": "Farshi Shalwar",
+      "slug": "farshi-shalwar",
+      "description": "Voluminous printed shalwars, cut long and finished by hand.",
+      "image": "/images/p-rubaab.jpg",
+      "displayOrder": 1,
+      "createdAt": "2026-11-19T21:23:20.139Z",
+      "updatedAt": "2026-11-19T21:23:20.139Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e877e",
+      "name": "Embroidered Ensembles",
+      "slug": "embroidered-ensembles",
+      "description": "Heavily worked pieces for the evenings that matter.",
+      "image": "/images/p-net.jpg",
+      "displayOrder": 2,
+      "createdAt": "2026-11-19T21:23:20.141Z",
+      "updatedAt": "2026-11-19T21:23:20.141Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e8780",
+      "name": "Lawn & Everyday",
+      "slug": "lawn-everyday",
+      "description": "Light, breathable suits for the ordinary days you still want to look lovely for.",
+      "image": "/images/p-lawn.jpg",
+      "displayOrder": 3,
+      "createdAt": "2026-11-19T21:23:20.142Z",
+      "updatedAt": "2026-11-19T21:23:20.142Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e8782",
+      "name": "Hijabs & Dupattas",
+      "slug": "hijabs-dupattas",
+      "description": "Chiffon, organza and net finishes in the house palette.",
+      "image": "/images/p-shawl.jpg",
+      "displayOrder": 4,
+      "createdAt": "2026-11-19T21:23:20.144Z",
+      "updatedAt": "2026-11-19T21:23:20.144Z",
+      "__v": 0
+    }
+  ],
+  "reviews": [],
+  "gallery": [
+    {
+      "_id": "6aff68c89b5bea05468e878e",
+      "image": "/images/hero-rubaab.jpg",
+      "caption": "Rubaab — the deep red edit",
+      "externalUrl": "https://www.instagram.com/hayanur.clothing/",
+      "displayOrder": 1,
+      "active": true,
+      "createdAt": "2026-11-19T21:23:20.170Z",
+      "updatedAt": "2026-11-19T21:23:20.170Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e878f",
+      "image": "/images/hero-elaf.jpg",
+      "caption": "Elaf — black, but never basic",
+      "externalUrl": "https://www.instagram.com/hayanur.clothing/",
+      "displayOrder": 2,
+      "active": true,
+      "createdAt": "2026-11-19T21:23:20.170Z",
+      "updatedAt": "2026-11-19T21:23:20.170Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e8790",
+      "image": "/images/hero-pista.jpg",
+      "caption": "Pista, softly",
+      "externalUrl": "https://www.instagram.com/hayanur.clothing/",
+      "displayOrder": 3,
+      "active": true,
+      "createdAt": "2026-11-19T21:23:20.170Z",
+      "updatedAt": "2026-11-19T21:23:20.170Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e8791",
+      "image": "/images/p-shawl.jpg",
+      "caption": "The dupatta shelf",
+      "externalUrl": "https://www.instagram.com/hayanur.clothing/",
+      "displayOrder": 4,
+      "active": true,
+      "createdAt": "2026-11-19T21:23:20.170Z",
+      "updatedAt": "2026-11-19T21:23:20.170Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e8792",
+      "image": "/images/p-net.jpg",
+      "caption": "Silver on net",
+      "externalUrl": "https://www.instagram.com/hayanur.clothing/",
+      "displayOrder": 4,
+      "active": true,
+      "createdAt": "2026-11-19T21:23:20.170Z",
+      "updatedAt": "2026-11-19T21:23:20.170Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aff68c89b5bea05468e8793",
+      "image": "/images/about-atelier.jpg",
+      "caption": "Handwork in the atelier",
+      "externalUrl": "https://www.instagram.com/hayanur.clothing/",
+      "displayOrder": 6,
+      "active": true,
+      "createdAt": "2026-11-19T21:23:20.170Z",
+      "updatedAt": "2026-11-19T21:23:20.170Z",
+      "__v": 0
+    }
+  ]
+}

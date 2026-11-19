@@ -1,4 +1,5 @@
 import { api } from '@/api/client';
+import { isDemoCatalogue } from '@/api/demo';
 
 const SESSION_KEY = 'hn.session';
 
@@ -22,6 +23,8 @@ export interface TrackPayload {
 
 /** Fire-and-forget: analytics must never break the storefront. */
 export function trackEvent(payload: TrackPayload): void {
+  // The static preview has no API; don't fire doomed requests from it.
+  if (isDemoCatalogue()) return;
   const body = {
     ...payload,
     path: payload.path ?? window.location.pathname,

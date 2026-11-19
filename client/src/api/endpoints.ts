@@ -1,4 +1,9 @@
 import { api, resolveAssetUrl } from './client';
+import {
+  isDemoCatalogue,
+  loadCatalogueSnapshot,
+  querySnapshotProducts,
+} from './demo';
 import type {
   AdminSettings,
   AnalyticsSummary,
@@ -61,45 +66,80 @@ function toQuery(params: Record<string, string | undefined>): string {
 
 export const publicApi = {
   getSettings: () =>
-    api.get<{ settings: PublicSettings }>('/settings').then((r) => ({ settings: normSettings(r.settings) })),
+    (isDemoCatalogue()
+      ? loadCatalogueSnapshot().then((snapshot) => ({ settings: snapshot.settings }))
+      : api.get<{ settings: PublicSettings }>('/settings')
+    ).then((r) => ({ settings: normSettings(r.settings) })),
 
   listProducts: (params: ProductQueryParams = {}) =>
-    api
-      .get<{ products: Product[] }>(
-        `/products${toQuery({ search: params.search, category: params.category, sort: params.sort })}`
-      )
-      .then((r) => ({ products: r.products.map(normProduct) })),
+    (isDemoCatalogue()
+      ? loadCatalogueSnapshot().then((snapshot) => ({
+          products: querySnapshotProducts(snapshot.products, snapshot.categories, params),
+        }))
+      : api.get<{ products: Product[] }>(
+          `/products${toQuery({ search: params.search, category: params.category, sort: params.sort })}`
+        )
+    ).then((r) => ({ products: r.products.map(normProduct) })),
 
   getProduct: (slug: string) =>
-    api
-      .get<{ product: Product }>(`/products/${encodeURIComponent(slug)}`)
-      .then((r) => ({ product: normProduct(r.product) })),
+    (isDemoCatalogue()
+      ? loadCatalogueSnapshot().then((snapshot) => {
+          const product = snapshot.products.find((item) => item.slug === slug);
+          if (!product) throw new Error('That piece is no longer available.');
+          return { product };
+        })
+      : api.get<{ product: Product }>(`/products/${encodeURIComponent(slug)}`)
+    ).then((r) => ({ product: normProduct(r.product) })),
 
   getRelated: (slug: string) =>
-    api
-      .get<{ products: Product[] }>(`/products/${encodeURIComponent(slug)}/related`)
-      .then((r) => ({ products: r.products.map(normProduct) })),
+    (isDemoCatalogue()
+      ? loadCatalogueSnapshot().then((snapshot) => {
+          const current = snapshot.products.find((item) => item.slug === slug);
+          const related = snapshot.products.filter(
+            (item) =>
+              item.slug !== slug &&
+              (!current?.category || item.category?.slug === current.category.slug)
+          );
+          return { products: (related.length ? related : snapshot.products.filter((item) => item.slug !== slug)).slice(0, 4) };
+        })
+      : api.get<{ products: Product[] }>(`/products/${encodeURIComponent(slug)}/related`)
+    ).then((r) => ({ products: r.products.map(normProduct) })),
 
   listCategories: () =>
-    api
-      .get<{ categories: Category[] }>('/categories')
-      .then((r) => ({ categories: r.categories.map(normCategory) })),
+    (isDemoCatalogue()
+      ? loadCatalogueSnapshot().then((snapshot) => ({ categories: snapshot.categories }))
+      : api.get<{ categories: Category[] }>('/categories')
+    ).then((r) => ({ categories: r.categories.map(normCategory) })),
 
   getCategory: (slug: string) =>
-    api
-      .get<{ category: Category; products: Product[] }>(`/categories/${encodeURIComponent(slug)}`)
-      .then((r) => ({
-        category: normCategory(r.category),
-        products: r.products.map(normProduct),
-      })),
+    (isDemoCatalogue()
+      ? loadCatalogueSnapshot().then((snapshot) => {
+          const category = snapshot.categories.find((item) => item.slug === slug);
+          if (!category) throw new Error('That collection could not be found.');
+          return {
+            category,
+            products: snapshot.products.filter((item) => item.category?.slug === slug),
+          };
+        })
+      : api.get<{ category: Category; products: Product[] }>(
+          `/categories/${encodeURIComponent(slug)}`
+        )
+    ).then((r) => ({
+      category: normCategory(r.category),
+      products: r.products.map(normProduct),
+    })),
 
   listReviews: () =>
-    api.get<{ reviews: Review[] }>('/reviews').then((r) => ({ reviews: r.reviews.map(normReview) })),
+    (isDemoCatalogue()
+      ? loadCatalogueSnapshot().then((snapshot) => ({ reviews: snapshot.reviews }))
+      : api.get<{ reviews: Review[] }>('/reviews')
+    ).then((r) => ({ reviews: r.reviews.map(normReview) })),
 
   listGallery: () =>
-    api
-      .get<{ items: GalleryItem[] }>('/gallery')
-      .then((r) => ({ items: r.items.map(normGalleryItem) })),
+    (isDemoCatalogue()
+      ? loadCatalogueSnapshot().then((snapshot) => ({ items: snapshot.gallery }))
+      : api.get<{ items: GalleryItem[] }>('/gallery')
+    ).then((r) => ({ items: r.items.map(normGalleryItem) })),
 };
 
 // ── Admin ───────────────────────────────────────────────────────
