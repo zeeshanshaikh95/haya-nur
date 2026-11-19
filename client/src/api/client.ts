@@ -86,5 +86,8 @@ export function resolveAssetUrl(url: string): string {
   if (!url) return '';
   if (/^https?:\/\//i.test(url)) return url;
   if (url.startsWith('/uploads/')) return `${API_ORIGIN}${url}`;
-  return `${import.meta.env.BASE_URL.replace(/\/$/, '')}${url}`;
+  const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+  // Already resolved (or served from the site root) — never prefix twice.
+  if (!base || url === base || url.startsWith(`${base}/`)) return url;
+  return `${base}${url}`;
 }
