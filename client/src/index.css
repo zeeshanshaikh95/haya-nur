@@ -120,4 +120,18 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Desktop hero: fade the portrait's side edges so it melts into the blurred backdrop. */
+  @media (min-width: 1024px) {
+    .hero-portrait-mask {
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 14%,
+        #000 86%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    }
+  }
 }

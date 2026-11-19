@@ -92,17 +92,39 @@ export function HeroSlider() {
               }`}
             >
               {item.imageUrl ? (
-                <img
-                  src={item.imageUrl.startsWith('http') ? item.imageUrl : assetUrl(item.imageUrl)}
-                  alt={item.headline || 'Haya Nur collection'}
-                  className={`h-full w-full object-cover object-[center_28%] ${
-                    isActive ? 'animate-ken-burns' : ''
-                  }`}
-                  loading={itemIndex === 0 ? 'eager' : 'lazy'}
-                />
+                <>
+                  {/* Wide screens: a portrait photo cannot fill a full-bleed hero without cutting
+                      the model, so a soft copy of the same photo fills the sides and the
+                      uncropped portrait sits on top of it. */}
+                  <img
+                    src={item.imageUrl.startsWith('http') ? item.imageUrl : assetUrl(item.imageUrl)}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 hidden h-full w-full scale-125 object-cover object-[center_28%] blur-2xl lg:block"
+                    loading={itemIndex === 0 ? 'eager' : 'lazy'}
+                  />
+                  <img
+                    src={item.imageUrl.startsWith('http') ? item.imageUrl : assetUrl(item.imageUrl)}
+                    alt={item.headline || 'Haya Nur collection'}
+                    className={`h-full w-full object-cover object-[center_28%] lg:hidden ${
+                      isActive ? 'animate-ken-burns' : ''
+                    }`}
+                    loading={itemIndex === 0 ? 'eager' : 'lazy'}
+                  />
+                  <div className="pointer-events-none absolute inset-0 hidden lg:flex lg:items-stretch lg:justify-center">
+                    <img
+                      src={item.imageUrl.startsWith('http') ? item.imageUrl : assetUrl(item.imageUrl)}
+                      alt=""
+                      aria-hidden="true"
+                      className={`hero-portrait-mask h-full w-auto max-w-none ${isActive ? 'animate-ken-burns' : ''}`}
+                      loading={itemIndex === 0 ? 'eager' : 'lazy'}
+                    />
+                  </div>`
+                </>
               ) : null}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-ink/10" />
               <div className="absolute inset-0 bg-gradient-to-r from-ink/50 via-transparent to-transparent" />
+              <div className="absolute inset-y-0 left-0 hidden w-3/5 bg-gradient-to-r from-ink/90 via-ink/35 to-transparent lg:block" />
             </div>
           );
         })}
