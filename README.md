@@ -3,6 +3,9 @@
 Mobile-first storefront for **Haya Nur** (@hayanur.clothing) — a Mumbai label for modest ethnic
 wear. Primary conversion: browse → bag → **order on WhatsApp** (no payment gateway, by design).
 
+**Live preview:** https://zeeshanshaikh95.github.io/haya-nur/ (GitHub Pages — static catalogue
+snapshot, no admin; see [Hosting](#hosting--live-url)).
+
 Built to the same architecture as the client's previous Glow by Parveen site (React SPA + Express
 API + MongoDB, protected admin panel, WhatsApp ordering), with a completely different design
 system, a configurable hero slider and a clothing-specific catalogue model.
@@ -12,6 +15,29 @@ system, a configurable hero slider and a clothing-specific catalogue model.
 > descriptive working titles — rename or remove them in Admin → Products. No prices, reviews,
 > policies or business claims are invented. Prices default to **“price on request”**, matching how
 > the studio quotes today.
+
+## Hosting / live URL
+
+| Environment | URL | What works |
+| GitHub Pages (live now) | https://zeeshanshaikh95.github.io/haya-nur/ | Browsing, filters, piece pages, bag, WhatsApp/Instagram ordering |
+| Local (`npm run dev`) | http://localhost:5173 | Everything, including `/admin` and analytics |
+
+Pages is static, so it cannot run the Express API. The Pages build reads a committed snapshot of
+the catalogue (`client/public/demo/catalogue.json`, enabled by `VITE_DEMO_CATALOGUE=true`) instead
+of showing empty states. Regenerate it after changing catalogue content:
+
+```shell
+npm run dev:server          # in one terminal
+npm run demo:catalogue      # writes the snapshot
+```
+
+Consequences of the preview build: ordering buttons fall back to Instagram DMs (no WhatsApp number
+is published yet), the admin panel has no API behind it, and review/analytics writes are skipped.
+To run it as a real shop, host the API and set the `VITE_API_URL` repository variable plus
+`VITE_DEMO_CATALOGUE=false` — see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
+Pages on a **private** repository needs GitHub Pro, so this repository is public. Push to `main`
+and `.github/workflows/deploy-pages.yml` rebuilds and redeploys automatically.
 
 ## Tech stack
 
